@@ -1,5 +1,4 @@
 import * as chartJs from "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js";
-import { dayCreator } from "../weather/weather.js";
 import * as dateFns from 'https://cdn.jsdelivr.net/npm/date-fns@2.24.0/esm/index.js';
 
 export let chartCreator = (info, i) => {
