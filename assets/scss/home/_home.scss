@@ -1,0 +1,94 @@
+#home {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 25px;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-around;
+
+    #form {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        width: 80%;
+        justify-content: space-around;
+
+        @include for-tablet {
+            width: 50%;
+        }
+    }
+
+    #choose {
+        border: 0px transparent;
+    
+        background-color: $secondary;
+        height: 25px;
+        padding: 5px;
+        color: white;
+        width: 225px;
+    
+        border-radius: 10px;
+    
+        &::placeholder {
+            color: white;
+        }
+    
+        &:focus {
+            color: white;
+        }
+
+        @include for-tablet {
+            width: 40%;
+            order: 0;
+        }
+    }
+}
+
+#submit {
+    border: 0px transparent;
+
+    cursor: pointer;
+
+    color: white;
+    background-color: $secondary;
+    height: 35px;
+    width: 85px;
+    border-radius: 10px;
+    transition: 150ms;
+    margin-left: 5%;
+
+    &:hover {
+        background-color: $hover;
+    }
+
+    @include for-tablet {
+        width: 20%;
+        margin-left: 1%;
+        order: -1;
+    }
+}
+
+#add {
+    border: 0px transparent;
+
+    cursor: pointer;
+
+    color: white;
+    background-color: $secondary;
+    height: 35px;
+    width: 85px;
+    border-radius: 10px;
+    transition: 150ms;
+    margin-left: 2%;
+
+    &:hover {
+        background-color: $hover;
+    }
+
+    @include for-tablet {
+        width: 20%;
+        margin-left: 1%;
+    }
+}
