@@ -1,3 +1,32 @@
+import Clear from '../../img/Clear.png';
+import Clouds from '../../img/Clouds.png';
+import Drizzle from '../../img/Drizzle.png';
+import Humidity from '../../img/Humidity.png';
+import Mist from '../../img/Mist.png';
+import Rain from '../../img/Rain.png';
+import Snow from '../../img/Snow.png';
+import Wind from '../../img/Wind.png';
+
+let imgSrc = (name, destination) => {
+    if (name == 'Clear') {
+        destination.src = Clear;
+    } else if (name == 'Clouds') {
+        destination.src = Clouds;
+    } else if (name == 'Drizzle') {
+        destination.src = Drizzle;
+    } else if (name == 'Humidity') {
+        destination.src = Humidity;
+    } else if (name == 'Mist') {
+        destination.src = Mist;
+    } else if (name == 'Rain') {
+        destination.src = Rain;
+    } else if (name == 'Snow') {
+        destination.src = Snow;
+    } else if (name == 'Wind') {
+        destination.src = Wind;
+    }
+}
+
 export let infoWrite = (info, i, images) => {
     const cityName = document.querySelector(`.cityName${i}`);
     const temperature = document.querySelector(`.temperature${i}`)
@@ -32,9 +61,9 @@ export let infoWrite = (info, i, images) => {
     let skyState = info.list[0].weather[0].main;
     let descT = info.list[0].weather[0].description;
 
-    let mat_img = `assets/img/${info.list[0].weather[0].main}.png`;
-    let mid_img = `./assets/img/${info.list[1].weather[0].main}.png`;
-    let soi_img = `./assets/img/${info.list[2].weather[0].main}.png`;
+    let mat_img = info.list[0].weather[0].main;
+    let mid_img = info.list[1].weather[0].main;
+    let soi_img = info.list[2].weather[0].main;
 
     let mat_temp = info.list[0].main.temp - 273.15;
     let mid_temp = info.list[1].main.temp - 273.15;
@@ -43,11 +72,12 @@ export let infoWrite = (info, i, images) => {
     cityName.textContent = i;
     temperature.textContent = tempss + '°C';
     descR.textContent = descT;
-    imgSky.src = `./assets/img/${skyState}.png`;
 
-    img_mat.src = mat_img;
-    img_mid.src = mid_img;
-    img_soi.src = soi_img;
+    imgSrc(skyState, imgSky)
+
+    imgSrc(mat_img, img_mat)
+    imgSrc(mid_img, img_mid)
+    imgSrc(soi_img, img_soi)
 
     temp_mat.textContent = Math.round(mat_temp) + "°C";
     temp_mid.textContent = Math.round(mid_temp) + "°C";
@@ -59,11 +89,17 @@ export let infoWrite = (info, i, images) => {
     temp_quatre.textContent = Math.round(info.list[32].main.temp - 273.15) + "°C";
     temp_cinq.textContent = Math.round(info.list[39].main.temp - 273.15) + "°C";
 
-    img_un.src = `./assets/img/${info.list[8].weather[0].main}.png`;
-    img_deux.src = `./assets/img/${info.list[16].weather[0].main}.png`;
-    img_trois.src = `./assets/img/${info.list[24].weather[0].main}.png`;
-    img_quatre.src = `./assets/img/${info.list[32].weather[0].main}.png`;
-    img_cinq.src = `./assets/img/${info.list[39].weather[0].main}.png`;
+    const link_un = info.list[8].weather[0].main;
+    const link_deux = info.list[16].weather[0].main;
+    const link_trois = info.list[24].weather[0].main;
+    const link_quatre = info.list[32].weather[0].main;
+    const link_cinq = info.list[39].weather[0].main;
+
+    imgSrc(link_un, img_un)
+    imgSrc(link_deux, img_deux)
+    imgSrc(link_trois, img_trois)
+    imgSrc(link_quatre, img_quatre)
+    imgSrc(link_cinq, img_cinq)
 
     cityImg.src = images.results[0].urls.regular;
     titleCity.textContent = i;
