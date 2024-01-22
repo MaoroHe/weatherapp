@@ -1,3 +1,12 @@
+import Clear from '../../img/Clear.png';
+import Clouds from '../../img/Clouds.png';
+import Drizzle from '../../img/Drizzle.png';
+import Humidity from '../../img/Humidity.png';
+import Mist from '../../img/Mist.png';
+import Rain from '../../img/Rain.png';
+import Snow from '../../img/Snow.png';
+import Wind from '../../img/Wind.png';
+
 export let infoWrite = (info, i, images) => {
     const cityName = document.querySelector(`.cityName${i}`);
     const temperature = document.querySelector(`.temperature${i}`)
