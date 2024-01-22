@@ -1,12 +1,3 @@
-import Clear from '../../img/Clear.png';
-import Clouds from '../../img/Clouds.png';
-import Drizzle from '../../img/Drizzle.png';
-import Humidity from '../../img/Humidity.png';
-import Mist from '../../img/Mist.png';
-import Rain from '../../img/Rain.png';
-import Snow from '../../img/Snow.png';
-import Wind from '../../img/Wind.png';
-
 export let infoWrite = (info, i, images) => {
     const cityName = document.querySelector(`.cityName${i}`);
     const temperature = document.querySelector(`.temperature${i}`)
@@ -41,7 +32,7 @@ export let infoWrite = (info, i, images) => {
     let skyState = info.list[0].weather[0].main;
     let descT = info.list[0].weather[0].description;
 
-    let mat_img = `./assets/img/${info.list[0].weather[0].main}.png`;
+    let mat_img = `assets/img/${info.list[0].weather[0].main}.png`;
     let mid_img = `./assets/img/${info.list[1].weather[0].main}.png`;
     let soi_img = `./assets/img/${info.list[2].weather[0].main}.png`;
 
