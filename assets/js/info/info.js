@@ -32,9 +32,9 @@ export let infoWrite = (info, i, images) => {
     let skyState = info.list[0].weather[0].main;
     let descT = info.list[0].weather[0].description;
 
-    let mat_img = `../assets/img/${info.list[0].weather[0].main}.png`;
-    let mid_img = `../assets/img/${info.list[1].weather[0].main}.png`;
-    let soi_img = `../assets/img/${info.list[2].weather[0].main}.png`;
+    let mat_img = `./assets/img/${info.list[0].weather[0].main}.png`;
+    let mid_img = `./assets/img/${info.list[1].weather[0].main}.png`;
+    let soi_img = `./assets/img/${info.list[2].weather[0].main}.png`;
 
     let mat_temp = info.list[0].main.temp - 273.15;
     let mid_temp = info.list[1].main.temp - 273.15;
@@ -43,7 +43,7 @@ export let infoWrite = (info, i, images) => {
     cityName.textContent = i;
     temperature.textContent = tempss + '°C';
     descR.textContent = descT;
-    imgSky.src = `../assets/img/${skyState}.png`;
+    imgSky.src = `./assets/img/${skyState}.png`;
 
     img_mat.src = mat_img;
     img_mid.src = mid_img;
@@ -59,11 +59,11 @@ export let infoWrite = (info, i, images) => {
     temp_quatre.textContent = Math.round(info.list[32].main.temp - 273.15) + "°C";
     temp_cinq.textContent = Math.round(info.list[39].main.temp - 273.15) + "°C";
 
-    img_un.src = `../assets/img/${info.list[8].weather[0].main}.png`;
-    img_deux.src = `../assets/img/${info.list[16].weather[0].main}.png`;
-    img_trois.src = `../assets/img/${info.list[24].weather[0].main}.png`;
-    img_quatre.src = `../assets/img/${info.list[32].weather[0].main}.png`;
-    img_cinq.src = `../assets/img/${info.list[39].weather[0].main}.png`;
+    img_un.src = `./assets/img/${info.list[8].weather[0].main}.png`;
+    img_deux.src = `./assets/img/${info.list[16].weather[0].main}.png`;
+    img_trois.src = `./assets/img/${info.list[24].weather[0].main}.png`;
+    img_quatre.src = `./assets/img/${info.list[32].weather[0].main}.png`;
+    img_cinq.src = `./assets/img/${info.list[39].weather[0].main}.png`;
 
     cityImg.src = images.results[0].urls.regular;
     titleCity.textContent = i;
