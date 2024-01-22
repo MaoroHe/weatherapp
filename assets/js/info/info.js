@@ -43,7 +43,7 @@ export let infoWrite = (info, i, images) => {
     cityName.textContent = i;
     temperature.textContent = tempss + '°C';
     descR.textContent = descT;
-    imgSky.src = `./assets/img/${skyState}.png`;
+    imgSky.src = `weatherapp/assets/img/${skyState}.png`;
 
     img_mat.src = mat_img;
     img_mid.src = mid_img;
